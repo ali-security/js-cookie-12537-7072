@@ -26,15 +26,15 @@ permissions:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
       - run: npm install -g npm
       - run: npm i
       - uses: chainguard-dev/actions/setup-gitsign@5478b1fb59c858e26e88f3564e196f1637e6d718
